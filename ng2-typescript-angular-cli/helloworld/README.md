@@ -50,7 +50,7 @@ ng serve --open
 •webpack is a module bundler that takes all these files and modules (TypeScript, SASS or ESnext and new features like ES6 modules),     processes them and makes them available in a way that can be run in any browser. Moreover it can optimize your application by taking   advantage of a rich community of plugins
 • You can find the bootstrapping logic in the src/main.ts module ,In this file we import the platformBrowserDynamic object from the     '@angular/platform-browser-dynamic' module and call its bootstrapModule function with the AppModule as argument.
 
-# what is moudle in angular
+# What is module in angular
 . Generally module contain code that encapsulates a specific functionality. The module will expose this functionality to the rest of    the application by defining a series of "exports" that other parts of the system can then "import".
 
 # Angular 2 modules and the new NgModule decorator let us declare in one place all the dependencies and components of our application    without the need to do it on a per-component 
