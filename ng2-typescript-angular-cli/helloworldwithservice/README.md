@@ -48,16 +48,22 @@ The principles of object oriented design are condensed under the famous and catc
 • L – The Liskov Substitution Principle (LSP)
 • I – The Interface Segretation Principle (ISP)
 • D – The Dependency Inversion Principle (DIP)
-These principles represent a set of rules that allows us to improve the way we design and set up the dependencies between our classes and, in term, allow us to create more flexible, reusable and robust code.
+These principles represent a set of rules that allows us to improve the way we design and set up the dependencies between our classes and,
+in term, allow us to create more flexible, reusable and robust code.
 
 # The Single Responsibility Principle(SRP) 
 ```
 
   “A class should have one, and only one, reason to change or, 
   there should never be more than one reason for a class to change.”
-  This principle is based upon the fact that whenever a class handles more than one responsibility then there will be more than one reason for it to change. The consequences are pretty clear, if we need to change a given class for a number of different reasons, then this class is not going to be robust nor easy to maintain. In this case, there is what we call a coupling of responsibilities that will lead to a number of problems: modifying one of them, may have a negative effect on the others, it will imply the need to recompile code that wouldn’t be necessary if the responsibilities were decoupled, and it will allow the client of the class to access other responsibilities which it might not care for.
+  This principle is based upon the fact that whenever a class handles more than one responsibility then there will be more than one reason for it to change. 
+  The consequences are pretty clear, if we need to change a given class for a number of different reasons, then this class is not going to be robust nor easy to maintain. 
+  In this case, there is what we call a coupling of responsibilities that will lead to a number of problems: modifying one of them, may have a negative effect on the others, 
+  it will imply the need to recompile code that wouldn’t be necessary if the responsibilities were decoupled, and it will allow the client of the class to access other responsibilities which it might not care for.
 
-An example of a SRP violation could be a given Rectangle class which has a Draw method and a CalculateArea method. In this context, the class is handling two responsibilities, it has two reasons to change and thus is violating SRP. A way to decouple these responsibilities would be to extract separate interfaces, and make the clients depend upon these interfaces.
+An example of a SRP violation could be a given Rectangle class which has a Draw method and a CalculateArea method. In this context, 
+the class is handling two responsibilities, it has two reasons to change and thus is violating SRP. 
+A way to decouple these responsibilities would be to extract separate interfaces, and make the clients depend upon these interfaces.
 
 
 ```
@@ -67,7 +73,8 @@ An example of a SRP violation could be a given Rectangle class which has a Draw 
 or,
 A class should be open for extension but closed to modification.”
 
-The Open Closed Principle does just that, it leads our efforts when tackling this particular problem, saying that, whenever our application needs changes, we should never modify old code that already works and is tested, but extend it with brand new functionalities and code.
+The Open Closed Principle does just that, it leads our efforts when tackling this particular problem, saying that, 
+whenever our application needs changes, we should never modify old code that already works and is tested, but extend it with brand new functionalities and code.
 The Open Closed Principle is comprised by two main concepts or corollaries:
 • A class should be open for extension, which basically means that you should be able to extend the behavior or functionality of this given class.
 • A class should be closed for modification, which means that you should never modify the existing code of a class
@@ -85,11 +92,14 @@ type T such that for all programs P defined in terms of T, the
 behavior of P is unchanged when o1 is substituted for o2 then S is
 a subtype of T.”
 
-we make use of abstractions (and polymorphism) to let our classes adhere to the Open-Closed Principle. In order to make a proper use of inheritance, so our derived classes will still subscribe to OCP, we guide ourselves by the Liskov Substitution Principle.
+we make use of abstractions (and polymorphism) to let our classes adhere to the Open-Closed Principle. 
+In order to make a proper use of inheritance, so our derived classes will still subscribe to OCP, we guide ourselves by the Liskov Substitution Principle.
 
-The whole point here is that a derived class should work as expected i.e. should behave (at a minimum common denominator) as portrayed by the base class, so that, classes or methods that have a reference to the base class, will be able to use instances of the derived classes without being aware of it(thus avoiding hard-coded dependencies).
+The whole point here is that a derived class should work as expected i.e. should behave (at a minimum common denominator) as portrayed by the base class, so that, 
+classes or methods that have a reference to the base class, will be able to use instances of the derived classes without being aware of it(thus avoiding hard-coded dependencies).
 
- example of the Rectangle base class and the Square class that derives from it. So you have a Rectangle class in your application, and you want to use a new Square class, so you think… well a Square “is-a” Rectangle isn’t it? (it just has the same width and height) So you make it derive from the Rectangle class and wire it up so when you set the width, the height will be set as well and vice versa. Bang! Problem is that another developer that is working with Rectangles, doesn’t need to know what Rectangles really are at runtime, but still expects them to behave according to the base class definition. In this case, Square doesn’t conform to LSP and may end up causing problems based on unfulfilled assumptions. The point here is that, while it is a valid logical premise to relate a square with a rectangle, it might not be as useful from a code perspective. This example is also known as the circle-ellipse problem.This was a pretty subtle violation of LSP. However, in practice, any time you use the common switch statement to check the type of an object at runtime in order to do this or that, you are violating LSP and OCP (new derived types will force you to modify that switch block).
+ example of the Rectangle base class and the Square class that derives from it. So you have a Rectangle class in your application, 
+ and you want to use a new Square class, so you think… well a Square “is-a” Rectangle isn’t it? (it just has the same width and height) So you make it derive from the Rectangle class and wire it up so when you set the width, the height will be set as well and vice versa. Bang! Problem is that another developer that is working with Rectangles, doesn’t need to know what Rectangles really are at runtime, but still expects them to behave according to the base class definition. In this case, Square doesn’t conform to LSP and may end up causing problems based on unfulfilled assumptions. The point here is that, while it is a valid logical premise to relate a square with a rectangle, it might not be as useful from a code perspective. This example is also known as the circle-ellipse problem.This was a pretty subtle violation of LSP. However, in practice, any time you use the common switch statement to check the type of an object at runtime in order to do this or that, you are violating LSP and OCP (new derived types will force you to modify that switch block).
 
 
 
