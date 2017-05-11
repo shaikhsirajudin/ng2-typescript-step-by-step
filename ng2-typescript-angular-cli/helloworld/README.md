@@ -44,10 +44,14 @@ ng serve --open
 >npm i mdn-polyfills --save
 ```
 # Index.html The Entry Point for Your App
-•it links to your styles and javascript files
+•it links to your styles and javascript files.
+
 •it provides the HTML markup for your application with the custom <app-root> element.
+
 •the angular cli relies on Webpack to inject  the styles and javascript files during run time.
+
 •webpack is a module bundler that takes all these files and modules (TypeScript, SASS or ESnext and new features like ES6 modules),     processes them and makes them available in a way that can be run in any browser. Moreover it can optimize your application by taking   advantage of a rich community of plugins
+
 • You can find the bootstrapping logic in the src/main.ts module ,In this file we import the platformBrowserDynamic object from the     '@angular/platform-browser-dynamic' module and call its bootstrapModule function with the AppModule as argument.
 
 # What is module in angular
@@ -74,7 +78,9 @@ export class AppModule { }
 
 ```
 •an imports array where you declare your module dependencies, for instance, browser, forms, routing or http. The BrowserModule used above contains all the dependencies necessary to run Angular 2 on a browser.
+
 •a declarations array where you declare the components and directives that belong to the current module.
+
 •a bootstrap array that identifies the root component that Angular 2 should use to bootstrap your application.
 
 # What is a Component?
