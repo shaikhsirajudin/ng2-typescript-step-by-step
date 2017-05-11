@@ -147,12 +147,12 @@ export class PeopleListComponent implements OnInit {
 }
 
 ```
-#app-people-list? Why App?
+# app-people-list? Why App?
 >By default, when you create a new app with the angular cli all your new components will be prefixed with the app prefix. That’s because the custom elements standard requires custom components to be named with at least two letters separated by a dash to avoid conflicting with built-in browser elements like p, section, body and head.
 
 You can change the prefix for you app in the .angular-cli.json file that contains the angular cli configuration for your project. You can also set a prefix during project creation using the --prefix flag with ng new.
 
-#Just like ng-repeat in AngularJS, Angular 2 provides a repeater directive that let’s us repeat a part of a template: *ngFor:
+# Just like ng-repeat in AngularJS, Angular 2 provides a repeater directive that let’s us repeat a part of a template: *ngFor:
 ```
  <!-- this is the new syntax for ng-repeat -->
   <ul>
@@ -164,7 +164,7 @@ You can change the prefix for you app in the .angular-cli.json file that contain
 
 ```
 
-#The let person creates a local template variable that contains each item within the people array and is bound to each li element.
+# The let person creates a local template variable that contains each item within the people array and is bound to each li element.
 ```
 import { Component, ngOnInit } from '@angular/core';
 import { Person } from './person';
