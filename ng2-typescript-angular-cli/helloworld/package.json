@@ -6,6 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "buildnomap": "ng build --no-sourcemap",
+    "buildprodnomap": "ng build --prod --no-sourcemap",    
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
